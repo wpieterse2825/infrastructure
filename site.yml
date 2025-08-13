@@ -1,7 +1,5 @@
 ---
-- name: Test playbook
-  hosts: all
-  become: yes
-  tasks:
-    - name: Ping remote hosts
-      ansible.builtin.ping:
+- name: Executing roles for master
+  hosts: master
+  roles:
+    - interesting-repositories
