@@ -4,5 +4,7 @@ rm -rf ~/.config/gickup-sync
 mkdir -p ~/.config/gickup-sync
 
 wget -q --no-cache -O ~/.config/gickup-sync/github.yml https://raw.githubusercontent.com/wpieterse2825/interesting-repositories/refs/heads/main/github.yml
+wget -q --no-cache -O ~/.config/gickup-sync/gitlab.yml https://raw.githubusercontent.com/wpieterse2825/interesting-repositories/refs/heads/main/gitlab.yml
 
 /usr/bin/gickup ~/.config/gickup-sync/github.yml
+/usr/bin/gickup ~/.config/gickup-sync/gitlab.yml
