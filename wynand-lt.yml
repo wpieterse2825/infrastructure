@@ -1,6 +1,0 @@
----
-- name: Add roles for wynand-lt
-  hosts: localhost
-  roles:
-    - utilities-common
-    - utilities-development
