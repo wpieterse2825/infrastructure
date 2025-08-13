@@ -2,6 +2,7 @@
 - name: Add roles for all servers
   hosts: servers
   roles:
+    - shush-ssh
     - utilities-common
     - utilities-development
 - name: Executing roles for master
