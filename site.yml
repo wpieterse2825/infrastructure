@@ -1,4 +1,8 @@
 ---
+- name: Add roles for all servers
+  hosts: servers
+  roles:
+    - utilities-common
 - name: Executing roles for master
   hosts: master
   roles:
