@@ -1,0 +1,5 @@
+---
+- name: Disable SSH header for user
+  ansible.builtin.file:
+    path: '~/.hushlogin'
+    state: touch
