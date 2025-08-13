@@ -3,6 +3,7 @@
   hosts: servers
   roles:
     - utilities-common
+    - utilities-development
 - name: Executing roles for master
   hosts: master
   roles:
