@@ -1,0 +1,51 @@
+---
+- name: Install Gickup
+  become: yes
+  ansible.builtin.unarchive:
+    src: https://github.com/cooperspencer/gickup/releases/download/v0.10.39/gickup_0.10.39_linux_amd64.tar.gz
+    dest: /usr/bin
+    remote_src: yes
+    include:
+      - gickup
+    mode: '0775'
+- name: Create repository directory
+  become: yes
+  ansible.builtin.file:
+    path: /disks/d00/repositories
+    state: directory
+    owner: wynand
+    group: wynand
+    mode: '0700'
+- name: Copy update script
+  become: yes
+  ansible.builtin.copy:
+    src: ./gickup-sync
+    dest: /usr/bin/gickup-sync
+    owner: wynand
+    group: wynand
+    mode: '0775'
+  notify: Reload systemd
+- name: Copy Gickup systemd service file
+  become: yes
+  ansible.builtin.template:
+    src: gickup-sync.service.j2
+    dest: /etc/systemd/system/gickup-sync.service
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Reload systemd
+- name: Copy Gickup systemd timer file
+  become: yes
+  ansible.builtin.template:
+    src: gickup-sync.timer.j2
+    dest: /etc/systemd/system/gickup-sync.timer
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Reload systemd
+- name: Start and enable Gickup sync timer
+  become: yes
+  ansible.builtin.systemd:
+    name: gickup-sync.timer
+    enabled: yes
+    state: started

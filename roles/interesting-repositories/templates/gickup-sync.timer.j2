@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync Gickup repositories at 02H00
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+Unit=gickup-sync.service
+
+[Install]
+WantedBy=timers.target
