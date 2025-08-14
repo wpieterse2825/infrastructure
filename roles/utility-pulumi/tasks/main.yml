@@ -1,0 +1,9 @@
+---
+- name: Install Pulumi
+  become: yes
+  ansible.builtin.unarchive:
+    src: https://get.pulumi.com/releases/sdk/pulumi-v3.189.0-linux-x64.tar.gz
+    dest: /usr/bin
+    remote_src: yes
+    mode: '0775'
+    extra_opts: ['--strip-components=1']
