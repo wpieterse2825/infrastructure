@@ -4,3 +4,4 @@
   roles:
     - utilities-common
     - utilities-development
+    - utility-pulumi
