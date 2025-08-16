@@ -1,0 +1,25 @@
+---
+- name: Roles for masters
+  hosts: masters
+  become: yes
+  roles:
+    - shush-ssh
+    - utilities-common
+    - utilities-development
+    - geerlingguy.docker
+    - interesting-repositories
+- name: Roles for workers
+  hosts: workers
+  ignore_unreachable: true
+  become: yes
+  roles:
+    - shush-ssh
+    - utilities-common
+    - utilities-development
+    - geerlingguy.docker
+- name: Roles for control boxes
+  hosts: controlboxes
+  become: yes
+- name: Roles for desktops
+  hosts: desktops
+  become: yes

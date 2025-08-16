@@ -1,7 +1,0 @@
----
-- name: Add roles for wynand-dt
-  hosts: localhost
-  roles:
-    - utilities-common
-    - utilities-development
-    - utility-pulumi

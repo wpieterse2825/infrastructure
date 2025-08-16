@@ -13,6 +13,8 @@ all:
       hosts:
         worker-01.x86.server.home.arpa: {}
         worker-02.x86.server.home.arpa: {}
-    control-boxes:
+    controlboxes:
       hosts:
         control.development.home.arpa: {}
+    desktops:
+      hosts: {}
