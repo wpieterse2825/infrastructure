@@ -1,6 +1,7 @@
 ---
 - name: Add roles for all servers
   hosts: servers
+  ignore_unreachable: true
   roles:
     - shush-ssh
     - utilities-common
