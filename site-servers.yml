@@ -2,11 +2,13 @@
 - name: Add roles for all servers
   hosts: servers
   ignore_unreachable: true
+  become: yes
   roles:
     - shush-ssh
     - utilities-common
     - utilities-development
 - name: Executing roles for master
   hosts: master
+  become: yes
   roles:
     - interesting-repositories

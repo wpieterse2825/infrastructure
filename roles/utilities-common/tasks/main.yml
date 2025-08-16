@@ -1,20 +1,16 @@
 ---
 - name: Make sure package cache is up-to-date
-  become: yes
   ansible.builtin.apt:
     update_cache: yes
 - name: Install vim
-  become: yes
   ansible.builtin.apt:
     name: vim
     state: present
 - name: Install tmux
-  become: yes
   ansible.builtin.apt:
     name: tmux
     state: present
 - name: Install git
-  become: yes
   ansible.builtin.apt:
     name: git
     state: present
