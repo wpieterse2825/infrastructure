@@ -7,6 +7,7 @@
     - shush-ssh
     - utilities-common
     - utilities-development
+    - geerlingguy.docker
 - name: Executing roles for master
   hosts: master
   become: yes
