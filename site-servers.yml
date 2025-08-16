@@ -1,5 +1,5 @@
 ---
-- name: Add roles for all servers
+- name: Roles for servers
   hosts: servers
   ignore_unreachable: true
   become: yes
@@ -8,8 +8,8 @@
     - utilities-common
     - utilities-development
     - geerlingguy.docker
-- name: Executing roles for master
-  hosts: master
+- name: Roles for masters
+  hosts: masters
   become: yes
   roles:
     - interesting-repositories
